@@ -157,23 +157,37 @@ Business-ready dimensional tables created for analytics and reporting.
 # ⭐ Data Modeling
 
 ### Implemented a Galaxy Schema Data Model.
+![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/9716d4b8d16ab56730e0ba802f478e3b07cfaed3/Screenshot%20(132).png)
 
-- Fact Tables
-- Fact_Orders
-- Fact_Payments
-- Fact_Order_Items
-- Dimension Tables
-- Dim_Customers
-- Dim_Products
-- Dim_Sellers
-- Dim_Date
-- Dim_Geolocation
-- Modeling Concepts Demonstrated
-- Slowly Changing Dimensions (SCD)
-- Surrogate Keys
-- Fact-Dimension Relationships
-- Incremental MERGE Strategy
-- Medallion Architecture
+
+The project follows a Galaxy Schema (Fact Constellation Schema) design pattern for scalable e-commerce analytics. Transactional fact tables including Fact_Orders, Fact_Order_Items, Fact_Payments, and Fact_Reviews are connected with shared dimension tables such as Dim_Customers, Dim_Products, Dim_Sellers, and Dim_Geolocation.
+
+The model primarily uses one-to-many relationships between dimensions and facts, while fact-to-fact analytical relationships are conceptually many-to-many through shared business keys like order_id and customer_id.
+
+## Slowly Changing Dimension Strategy
+
+- SCD Type 2:
+  - Dim_Customers
+  - Dim_Sellers
+
+- SCD Type 1:
+  - Dim_Products
+    
+- Overwrite:
+   - Dim_Geolocation
+
+## Loading Strategy
+
+- Append-Only Fact Tables:
+  - Fact_Orders
+  - Fact_Order_Items
+  - Fact_Payments
+  - Fact_Reviews
+
+- Overwrite Strategy:
+  - Staging and temporary transformation tables in Silver layer
+
+The solution also implements incremental MERGE operations, surrogate key modeling, and Medallion Architecture (Bronze, Silver, Gold) for scalable cloud-based analytics engineering.
 - 
 # 📊 Key Business Metrics
 
