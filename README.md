@@ -1,29 +1,26 @@
-Brazilian E-Commerce Azure Data Engineering Project
+# Brazilian E-Commerce Azure Data Engineering Project
 
 Built an end-to-end Azure Data Engineering solution using the Brazilian Olist E-Commerce dataset to demonstrate scalable ETL pipelines, cloud data architecture, dimensional modeling, and business intelligence reporting for modern retail analytics. The project showcases industry-level practices in Azure Data Factory, Azure Data Lake Gen2, Azure Databricks, SQL, PySpark, and Power BI.
 
-Based on your uploaded architecture and ETL design presentation
-
-📌 Table of Contents
-Overview
-Business Problem
-Project Objectives
-Architecture Overview
-Dataset & Source Systems
-Azure Services Used
-Data Engineering Workflow
-Data Lake Architecture
-Data Modeling
-ETL & Data Cleaning Strategy
-Key Business Metrics
-Power BI Dashboard
-Project Structure
-How to Run This Project
-Key Engineering Highlights
-Business Impact
-Future Enhancements
-Author & Contact
-📖 Overview
+# 📌 Table of Contents
+- [📖 Overview](#-overview)
+- [💼 Business Problem](#-business-problem)
+- [🎯 Project Objectives](#-project-objectives)
+- [🏗️ Architecture Overview](#️-architecture-overview)
+- [📂 Dataset & Source Systems](#-dataset--source-systems)
+- [⚙️ Azure Services Used](#️-azure-services-used)
+- [🔄 Data Engineering Workflow](#-data-engineering-workflow)
+- [🗄️ Data Lake Architecture](#️-data-lake-architecture)
+- [⭐ Data Modeling](#-data-modeling)
+- [🧹 ETL & Data Cleaning Strategy](#-etl--data-cleaning-strategy)
+- [📊 Key Business Metrics](#-key-business-metrics)
+- [📈 Power BI Dashboard](#-power-bi-dashboard)
+- [📁 Project Structure](#-project-structure)
+- [🚀 How to Run This Project](#-how-to-run-this-project)
+- [💡 Key Engineering Highlights](#-key-engineering-highlights)
+- [📌 Business Impact](#-business-impact)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [👨‍💻 Author & Contact](#-author--contact)
 
 This project simulates a real-world enterprise retail analytics platform built on Microsoft Azure using the Brazilian Olist E-Commerce dataset.
 
