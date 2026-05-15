@@ -217,6 +217,7 @@ Geographic sales distribution
 Revenue trend analysis
 
 # 📁 Project Structure
+```plaintext
 brazilian-ecommerce-azure-data-engineering/
 │
 ├── README.md
@@ -252,6 +253,7 @@ brazilian-ecommerce-azure-data-engineering/
 │
 └── docs/
     └── project_documentation.pdf
+```
 
 Connect Power BI to Gold layer
 
