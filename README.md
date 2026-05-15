@@ -96,31 +96,8 @@ Data was ingested from multiple simulated enterprise source systems including:
 | GitHub | Version control and project documentation |
 Architecture inspired by your ETL project presentation
 
-📂 Dataset & Source Systems
+# 🔄 Data Engineering Workflow
 
-Dataset Used:
-
-Brazilian E-Commerce Public Dataset by Olist
-
-Source Tables
-Source Type	Dataset
-SQL Server	orders, products, sellers
-Snowflake	order_items
-REST API	category translations
-SFTP	customers
-CSV	payments
-Excel	reviews
-ADLS Bulk Upload	geolocation
-JSON	sample events
-☁️ Azure Services Used
-Azure Service	Purpose
-Microsoft Azure	Cloud platform
-Azure Data Factory	Pipeline orchestration
-Azure Data Lake Storage Gen2	Centralized storage
-Azure Databricks	Distributed transformations
-Azure SQL Database	Curated serving layer
-Power BI	Reporting & dashboards
-🔄 Data Engineering Workflow
 1. Data Ingestion
 
 Azure Data Factory pipelines ingest data from:
@@ -154,52 +131,53 @@ Business rule validation
 
 Business-ready dimensional tables created for analytics and reporting.
 
-🧹 ETL & Data Cleaning Strategy
+# 🧹 ETL & Data Cleaning Strategy
 
-Implemented industry-standard PySpark transformations:
+### Implemented industry-standard PySpark transformations:
 
-Data Quality Checks
-Null validation
-Duplicate detection
-Schema enforcement
-Invalid date handling
-Referential integrity validation
-Cleaning Operations
-Removed corrupted records
-Standardized timestamps
-Converted currencies & numeric formats
-Trimmed inconsistent text values
-Filtered negative payment values
-Standardized category mappings
-Performance Optimizations
-Incremental loading
-Partition pruning
-Delta-based processing
-Optimized joins
-Surrogate key generation
-⭐ Data Modeling
+- Data Quality Checks
+- Null validation
+- Duplicate detection
+- Schema enforcement
+- Invalid date handling
+- Referential integrity validation
+- Cleaning Operations
+- Removed corrupted records
+- Standardized timestamps
+- Converted currencies & numeric formats
+- Trimmed inconsistent text values
+- Filtered negative payment values
+- Standardized category mappings
+- Performance Optimizations
+- Incremental loading
+- Partition pruning
+- Delta-based processing
+- Optimized joins
+- Surrogate key generation
+# ⭐ Data Modeling
 
-Implemented a Star Schema dimensional model.
+### Implemented a Galaxy Schema Data Model.
 
-Fact Tables
-Fact_Orders
-Fact_Payments
-Fact_Order_Items
-Dimension Tables
-Dim_Customers
-Dim_Products
-Dim_Sellers
-Dim_Date
-Dim_Geolocation
-Modeling Concepts Demonstrated
-Slowly Changing Dimensions (SCD)
-Surrogate Keys
-Fact-Dimension Relationships
-Incremental MERGE Strategy
-Medallion Architecture
-📊 Key Business Metrics
+- Fact Tables
+- Fact_Orders
+- Fact_Payments
+- Fact_Order_Items
+- Dimension Tables
+- Dim_Customers
+- Dim_Products
+- Dim_Sellers
+- Dim_Date
+- Dim_Geolocation
+- Modeling Concepts Demonstrated
+- Slowly Changing Dimensions (SCD)
+- Surrogate Keys
+- Fact-Dimension Relationships
+- Incremental MERGE Strategy
+- Medallion Architecture
+- 
+# 📊 Key Business Metrics
 
-The dashboard tracks critical e-commerce KPIs:
+### The dashboard tracks critical e-commerce KPIs:
 
 KPI	Description
 Total Revenue	Overall sales generated
