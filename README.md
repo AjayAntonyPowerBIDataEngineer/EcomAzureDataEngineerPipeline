@@ -215,7 +215,8 @@ Product category analysis
 Delivery & logistics insights
 Geographic sales distribution
 Revenue trend analysis
-📁 Project Structure
+
+# 📁 Project Structure
 brazilian-ecommerce-azure-data-engineering/
 │
 ├── README.md
@@ -251,21 +252,10 @@ brazilian-ecommerce-azure-data-engineering/
 │
 └── docs/
     └── project_documentation.pdf
-⚙️ How to Run This Project
-Clone Repository
-git clone https://github.com/yourusername/brazilian-ecommerce-azure-data-engineering.git
-Configure Azure Resources
-Create Azure Data Factory
-Configure ADLS Gen2
-Setup Databricks Workspace
-Configure Azure SQL Database
-Execute Pipelines
-Run ingestion pipelines in ADF
-Load raw data into Bronze layer
-Execute Databricks notebooks
-Create curated Gold tables
+
 Connect Power BI to Gold layer
-💡 Key Engineering Highlights
+
+# 💡 Key Engineering Highlights
 
 ✔ Enterprise ETL orchestration using ADF
 ✔ Multi-source cloud ingestion
@@ -277,7 +267,7 @@ Connect Power BI to Gold layer
 ✔ Cloud-native scalable architecture
 ✔ Business KPI reporting using Power BI
 
-📌 Business Impact
+# 📌 Business Impact
 
 This project enables organizations to:
 
@@ -287,14 +277,17 @@ Identify delivery inefficiencies
 Optimize customer experience
 Track revenue and operational KPIs
 Build scalable analytics infrastructure
-🔮 Future Enhancements
+
+# 🔮 Future Enhancements
+
 Real-time streaming using Azure Event Hub
 CI/CD using Azure DevOps
 Delta Lake implementation
 Data quality monitoring framework
 Machine Learning forecasting models
 Automated metadata-driven pipelines
-👨‍💻 Author & Contact
+
+# 👨‍💻 Author & Contact
 
 Ajay Suresh
 Azure Data Engineer | Power BI Developer
