@@ -98,36 +98,39 @@ Architecture inspired by your ETL project presentation
 
 # 🔄 Data Engineering Workflow
 
-1. Data Ingestion
+- Data Ingestion
 
-Azure Data Factory pipelines ingest data from:
+  Azure Data Factory pipelines ingest data from:
+  
+  SQL databases
+  REST APIs
+  Snowflake tables
+  CSV/Excel/JSON files
+  SFTP servers
 
-SQL databases
-REST APIs
-Snowflake tables
-CSV/Excel/JSON files
-SFTP servers
-2. Raw Layer (Bronze)
+- Raw Layer (Bronze)
 
-Data is landed into Azure Data Lake Gen2 without modification.
+    Data is landed into Azure Data Lake Gen2 without modification.
+    
+    Features:
+    
+    Historical retention
+    Partitioned storage
+    Incremental ingestion
+    Metadata-driven loading
+  
+- Data Transformation (Silver)
 
-Features:
-
-Historical retention
-Partitioned storage
-Incremental ingestion
-Metadata-driven loading
-3. Data Transformation (Silver)
-
-Azure Databricks + PySpark used for:
-
-Schema validation
-Null handling
-Type casting
-Deduplication
-Data standardization
-Business rule validation
-4. Curated Layer (Gold)
+  Azure Databricks + PySpark used for:
+  
+  Schema validation
+  Null handling
+  Type casting
+  Deduplication
+  Data standardization
+  Business rule validation
+  
+- Curated Layer (Gold)
 
 Business-ready dimensional tables created for analytics and reporting.
 
