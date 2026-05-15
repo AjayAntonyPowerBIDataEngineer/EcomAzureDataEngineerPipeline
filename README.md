@@ -3,7 +3,7 @@
 Built an end-to-end Azure Data Engineering solution using the Brazilian Olist E-Commerce dataset to demonstrate scalable ETL pipelines, cloud data architecture, dimensional modeling, and business intelligence reporting for modern retail analytics. The project showcases industry-level practices in Azure Data Factory, Azure Data Lake Gen2, Azure Databricks, SQL, PySpark, and Power BI.
 
 # 📌 Table of Contents
-- [Overview](#-overview)
+- [ Overview](#-overview)
 - [Business Problem](#-business-problem)
 - [Project Objectives](#-project-objectives)
 - [Architecture Overview](#️-architecture-overview)
