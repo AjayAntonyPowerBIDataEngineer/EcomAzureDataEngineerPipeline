@@ -52,7 +52,7 @@ This project addresses these challenges by building a scalable Azure-based Data 
 
 # 🏗️ Architecture Overview
 
-
+![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/1074bc7d41e6225824d8796206c748a6110c451b/Screenshot%20(130).png)
 
 # 📂 Dataset
 
