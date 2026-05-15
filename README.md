@@ -3,26 +3,26 @@
 Built an end-to-end Azure Data Engineering solution using the Brazilian Olist E-Commerce dataset to demonstrate scalable ETL pipelines, cloud data architecture, dimensional modeling, and business intelligence reporting for modern retail analytics. The project showcases industry-level practices in Azure Data Factory, Azure Data Lake Gen2, Azure Databricks, SQL, PySpark, and Power BI.
 
 # 📌 Table of Contents
-- [📖 Overview](#-overview)
-- [💼 Business Problem](#-business-problem)
-- [🎯 Project Objectives](#-project-objectives)
-- [🏗️ Architecture Overview](#️-architecture-overview)
-- [📂 Dataset & Source Systems](#-dataset--source-systems)
-- [⚙️ Azure Services Used](#️-azure-services-used)
-- [🔄 Data Engineering Workflow](#-data-engineering-workflow)
-- [🗄️ Data Lake Architecture](#️-data-lake-architecture)
-- [⭐ Data Modeling](#-data-modeling)
-- [🧹 ETL & Data Cleaning Strategy](#-etl--data-cleaning-strategy)
-- [📊 Key Business Metrics](#-key-business-metrics)
-- [📈 Power BI Dashboard](#-power-bi-dashboard)
-- [📁 Project Structure](#-project-structure)
-- [🚀 How to Run This Project](#-how-to-run-this-project)
-- [💡 Key Engineering Highlights](#-key-engineering-highlights)
-- [📌 Business Impact](#-business-impact)
-- [🔮 Future Enhancements](#-future-enhancements)
-- [👨‍💻 Author & Contact](#-author--contact)
+- [Overview](#-overview)
+- [Business Problem](#-business-problem)
+- [Project Objectives](#-project-objectives)
+- [Architecture Overview](#️-architecture-overview)
+- [Dataset & Source Systems](#-dataset--source-systems)
+- [Azure Services Used](#️-azure-services-used)
+- [Data Engineering Workflow](#-data-engineering-workflow)
+- [Data Lake Architecture](#️-data-lake-architecture)
+- [Data Modeling](#-data-modeling)
+- [ETL & Data Cleaning Strategy](#-etl--data-cleaning-strategy)
+- [Key Business Metrics](#-key-business-metrics)
+- [Power BI Dashboard](#-power-bi-dashboard)
+- [Project Structure](#-project-structure)
+- [How to Run This Project](#-how-to-run-this-project)
+- [Key Engineering Highlights](#-key-engineering-highlights)
+- [Business Impact](#-business-impact)
+- [Future Enhancements](#-future-enhancements)
+- [Author & Contact](#-author--contact)
 ***
-# 📖 Overview
+# Overview
 
 This project demonstrates an end-to-end Azure Data Engineering solution built using the Brazilian Olist E-Commerce dataset. The platform was designed to simulate a real-world enterprise analytics environment where data is ingested from multiple heterogeneous sources, transformed using scalable cloud-based ETL pipelines, and modeled into business-ready analytical datasets.
 
@@ -32,7 +32,7 @@ The solution showcases modern Data Engineering practices including Medallion Arc
 
 ---
 
-# 💼 Business Problem
+# Business Problem
 
 Modern e-commerce organizations generate massive amounts of transactional and operational data from multiple disconnected systems such as orders, payments, customers, products, sellers, and logistics platforms.
 
@@ -50,11 +50,11 @@ This project addresses these challenges by building a scalable Azure-based Data 
 
 ---
 
-# 🏗️ Architecture Overview
+# Architecture Overview
 
 ![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/1074bc7d41e6225824d8796206c748a6110c451b/Screenshot%20(130).png)
 
-# 📂 Dataset
+# Dataset
 
 Dataset Used:
 
@@ -83,7 +83,7 @@ Data was ingested from multiple simulated enterprise source systems including:
 
 ---
 
-# ⚙️ Tools & Technologies
+# Tools & Technologies
 
 | Technology | Purpose |
 |---|---|
@@ -96,7 +96,7 @@ Data was ingested from multiple simulated enterprise source systems including:
 | GitHub | Version control and project documentation |
 Architecture inspired by your ETL project presentation
 
-# 🔄 Data Engineering Workflow
+# Data Engineering Workflow
 
 - Data Ingestion
 
@@ -134,7 +134,7 @@ Architecture inspired by your ETL project presentation
 
 Business-ready dimensional tables created for analytics and reporting.
 
-# 🧹 ETL & Data Cleaning Strategy
+# ETL & Data Cleaning Strategy
 
 ### Implemented industry-standard PySpark transformations:
 
@@ -157,7 +157,8 @@ Business-ready dimensional tables created for analytics and reporting.
 - Delta-based processing
 - Optimized joins
 - Surrogate key generation
-# ⭐ Data Modeling
+  
+# Data Modeling
 
 ### Implemented a Galaxy Schema Data Model.
 ![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/9716d4b8d16ab56730e0ba802f478e3b07cfaed3/Screenshot%20(132).png)
@@ -192,7 +193,7 @@ The model primarily uses one-to-many relationships between dimensions and facts,
 
 The solution also implements incremental MERGE operations, surrogate key modeling, and Medallion Architecture (Bronze, Silver, Gold) for scalable cloud-based analytics engineering.
 
-# 📊 Key Business Metrics
+# Key Business Metrics
 
 ### The dashboard tracks critical e-commerce KPIs:
 
@@ -207,7 +208,7 @@ KPI	Description
 - Payment Analysis	Payment method insights
 - Customer Retention	Repeat purchase behavior
   
-### 📈  BI Dashboard
+### BI Dashboard
 
 Interactive dashboards built using Power BI provide:
 
@@ -219,7 +220,7 @@ Delivery & logistics insights
 Geographic sales distribution
 Revenue trend analysis
 
-# 📁 Project Structure
+# Project Structure
 ```plaintext
 brazilian-ecommerce-azure-data-engineering/
 │
@@ -260,7 +261,7 @@ brazilian-ecommerce-azure-data-engineering/
 
 Connect Power BI to Gold layer
 
-# 💡 Key Engineering Highlights
+# Key Engineering Highlights
 
 ✔ Enterprise ETL orchestration using ADF
 ✔ Multi-source cloud ingestion
@@ -272,7 +273,7 @@ Connect Power BI to Gold layer
 ✔ Cloud-native scalable architecture
 ✔ Business KPI reporting using Power BI
 
-# 📌 Business Impact
+# Business Impact
 
 This project enables organizations to:
 
@@ -283,7 +284,7 @@ Optimize customer experience
 Track revenue and operational KPIs
 Build scalable analytics infrastructure
 
-# 🔮 Future Enhancements
+# Future Enhancements
 
 Real-time streaming using Azure Event Hub
 CI/CD using Azure DevOps
@@ -292,7 +293,7 @@ Data quality monitoring framework
 Machine Learning forecasting models
 Automated metadata-driven pipelines
 
-# 👨‍💻 Author & Contact
+# Author & Contact
 
 Ajay Suresh
 Azure Data Engineer | Power BI Developer
