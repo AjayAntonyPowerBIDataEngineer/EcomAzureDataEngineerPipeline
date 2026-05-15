@@ -188,6 +188,7 @@ The model primarily uses one-to-many relationships between dimensions and facts,
   - Staging and temporary transformation tables in Silver layer
 
 The solution also implements incremental MERGE operations, surrogate key modeling, and Medallion Architecture (Bronze, Silver, Gold) for scalable cloud-based analytics engineering.
+
 - 
 # 📊 Key Business Metrics
 
