@@ -176,7 +176,7 @@ The model primarily uses one-to-many relationships between dimensions and facts,
 - Overwrite:
    - Dim_Geolocation
 
-## Loading Strategy
+### Loading Strategy
 
 - Append-Only Fact Tables:
   - Fact_Orders
