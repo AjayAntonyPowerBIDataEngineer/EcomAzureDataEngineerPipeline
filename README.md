@@ -21,75 +21,75 @@ Built an end-to-end Azure Data Engineering solution using the Brazilian Olist E-
 - [📌 Business Impact](#-business-impact)
 - [🔮 Future Enhancements](#-future-enhancements)
 - [👨‍💻 Author & Contact](#-author--contact)
+***
+# 📖 Overview
 
-This project simulates a real-world enterprise retail analytics platform built on Microsoft Azure using the Brazilian Olist E-Commerce dataset.
+This project demonstrates an end-to-end Azure Data Engineering solution built using the Brazilian Olist E-Commerce dataset. The platform was designed to simulate a real-world enterprise analytics environment where data is ingested from multiple heterogeneous sources, transformed using scalable cloud-based ETL pipelines, and modeled into business-ready analytical datasets.
 
-The solution demonstrates how raw multi-source e-commerce data can be ingested, transformed, modeled, and analyzed to produce business-ready insights for global retail organizations.
+The project leverages Azure Data Factory for orchestration, Azure Data Lake Gen2 for storage, Azure Databricks and PySpark for distributed data processing, SQL for data modeling, and Power BI for interactive business intelligence reporting.
 
-The architecture follows modern Medallion Architecture principles using:
+The solution showcases modern Data Engineering practices including Medallion Architecture, incremental loading, dimensional modeling, data quality validation, and scalable cloud analytics workflows.
 
-Raw Zone (Bronze)
-Cleaned/Validated Zone (Silver)
-Curated Analytics Zone (Gold)
+---
 
-The project highlights:
+# 💼 Business Problem
 
-Enterprise ETL orchestration
-Scalable cloud data engineering
-Data quality validation
-Incremental data loading
-Star schema dimensional modeling
-KPI-driven analytics dashboards
-Distributed data processing using PySpark
-🎯 Business Problem
+Modern e-commerce organizations generate massive amounts of transactional and operational data from multiple disconnected systems such as orders, payments, customers, products, sellers, and logistics platforms.
 
-Global e-commerce companies generate large volumes of transactional data from multiple systems including:
+Without a centralized cloud-based analytics platform, organizations face challenges in:
 
-Orders
-Payments
-Reviews
-Customers
-Sellers
-Products
-Logistics
+- Integrating data from multiple heterogeneous sources
+- Maintaining data quality and consistency
+- Building scalable ETL pipelines
+- Monitoring operational and business KPIs
+- Tracking customer and seller performance
+- Optimizing delivery and fulfillment operations
+- Generating actionable business insights for decision-making
 
-The challenge is to:
+This project addresses these challenges by building a scalable Azure-based Data Engineering platform capable of processing, transforming, and analyzing Brazilian e-commerce data efficiently.
 
-Integrate heterogeneous data sources
-Ensure data quality and consistency
-Build scalable ETL pipelines
-Create optimized analytical models
-Deliver actionable business insights for decision makers
+---
 
-This project addresses these challenges using Azure-native cloud technologies.
+# 📂 Dataset
 
-🚀 Project Objectives
-Build an enterprise-grade Azure ETL pipeline
-Simulate real-world multi-source ingestion
-Implement scalable cloud data architecture
-Perform advanced data cleaning and validation
-Design dimensional data models for analytics
-Create recruiter-ready dashboards & documentation
-Demonstrate industry-standard Data Engineering practices
-🏗️ Architecture Overview
+Dataset Used:
 
-The project follows a modern Azure Data Engineering architecture:
+Brazilian E-Commerce Public Dataset by Olist
 
-Data Sources
-SQL Server
-REST API
-Snowflake
-SFTP
-CSV
-Excel
-JSON
-Azure Services
-Azure Data Factory → Data orchestration & ingestion
-Azure Data Lake Gen2 → Raw & curated storage
-Azure Databricks → Data transformation using PySpark
-Azure SQL Database → Curated serving layer
-Power BI → Visualization & KPI dashboards
+The dataset contains multi-domain e-commerce data including:
 
+- Orders
+- Customers
+- Products
+- Sellers
+- Payments
+- Reviews
+- Geolocation
+- Order Items
+
+Data was ingested from multiple simulated enterprise source systems including:
+
+- SQL Server
+- REST APIs
+- Snowflake
+- CSV files
+- Excel files
+- JSON files
+- SFTP sources
+
+---
+
+# ⚙️ Tools & Technologies
+
+| Technology | Purpose |
+|---|---|
+| Azure Data Factory | ETL orchestration and data movement |
+| Azure Data Lake Gen2 | Raw, staging, and curated storage |
+| Azure Databricks | Distributed data transformation |
+| PySpark | Data cleaning and processing |
+| SQL | Data modeling and querying |
+| Power BI | Interactive dashboards and reporting |
+| GitHub | Version control and project documentation |
 Architecture inspired by your ETL project presentation
 
 📂 Dataset & Source Systems
