@@ -189,22 +189,22 @@ The model primarily uses one-to-many relationships between dimensions and facts,
 
 The solution also implements incremental MERGE operations, surrogate key modeling, and Medallion Architecture (Bronze, Silver, Gold) for scalable cloud-based analytics engineering.
 
-- 
 # 📊 Key Business Metrics
 
 ### The dashboard tracks critical e-commerce KPIs:
 
 KPI	Description
-Total Revenue	Overall sales generated
-Order Volume	Number of customer orders
-Average Order Value	Revenue per order
-Delivery Performance	Shipping delay analysis
-Customer Satisfaction	Review score trends
-Top Performing Sellers	Revenue contribution
-Product Category Trends	Best-selling categories
-Payment Analysis	Payment method insights
-Customer Retention	Repeat purchase behavior
-📈 Power BI Dashboard
+- Total Revenue	Overall sales generated
+- Order Volume	Number of customer orders
+- Average Order Value	Revenue per order
+- Delivery Performance	Shipping delay analysis
+- Customer Satisfaction	Review score trends
+- Top Performing Sellers	Revenue contribution
+- Product Category Trends	Best-selling categories
+- Payment Analysis	Payment method insights
+- Customer Retention	Repeat purchase behavior
+  
+### 📈  BI Dashboard
 
 Interactive dashboards built using Power BI provide:
 
