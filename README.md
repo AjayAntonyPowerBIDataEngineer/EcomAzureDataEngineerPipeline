@@ -138,13 +138,35 @@ Business-ready dimensional tables created for analytics and reporting.
 
 ![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/7abe0e953321438efa023abe25bbc5dd1edb8a98/Screenshot%20(194).png)
 
+The pipeline follows a Medallion-style data processing architecture where raw Parquet files are first ingested into the Bronze layer using date-based partitioning for scalable storage and historical tracking.
 
+During the transformation phase, data cleansing and standardization processes are applied before loading the data into the Silver layer.
+
+### Dimension Table Processing
+
+Small Dimension Tables are processed using a Truncate and Load strategy, where existing records are replaced with the latest dataset during every execution.
+Large Dimension Tables are processed using Slowly Changing Dimension (SCD Type 1 / Type 2) logic based on business and reporting requirements:
+
+- SCD Type 1 updates existing records without maintaining history.
+- SCD Type 2 preserves historical changes by creating versioned records.
+
+### Fact Table Processing
+
+Fact Tables are processed using an Append-only strategy to efficiently handle high-volume transactional data and maintain historical records.
+
+Finally, curated Gold layer views are generated for downstream reporting and analytics consumption in Power BI dashboards.
 
 # Data Pipeline
 
 ![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/43fd258c914d2423a0a646e0fc8f243cb0787ff6/Data%20Pipeline%20For%20loading%20tables.png)
 
-
+- What This Pipeline Demonstrates
+  
+Metadata-Driven Orchestration using Lookup, Set Variable, and dynamic mapping enables reusable and configurable pipeline execution instead of hardcoded logic.
+Enterprise Logging & Auditing through SP_START_LOG_ENTRY, SP_SUCCESS, and SP_FAILURE supports execution tracking, monitoring, and operational visibility.
+Proper Error Handling with dedicated success and failure paths improves pipeline reliability and maintainability.
+Layered Data Processing following the Raw → Silver → Gold flow aligns with modern Medallion/Lakehouse architecture practices.
+Clear Separation of Responsibilities where ADF manages orchestration and ingestion, while Databricks handles transformations and business logic processing.
 
 # ETL & Data Cleaning Strategy
 
