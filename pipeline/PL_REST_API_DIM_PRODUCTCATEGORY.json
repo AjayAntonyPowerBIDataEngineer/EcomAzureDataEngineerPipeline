@@ -1,0 +1,65 @@
+{
+	"name": "PL_REST_API_DIM_PRODUCTCATEGORY",
+	"properties": {
+		"activities": [
+			{
+				"name": "CPY_REST_PQ",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_SOURCE_REST_API",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SINK_PARQUET",
+						"type": "DatasetReference",
+						"parameters": {
+							"Folder": {
+								"value": "@concat(\n'Product Category Name/',\nformatDateTime(utcNow(),'yyyy'),\n'/',\nformatDateTime(utcNow(),'MM'),\n'/',\nformatDateTime(utcNow(),'dd')\n)",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "PL_DIM_TABLE"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-05-17T19:46:29Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

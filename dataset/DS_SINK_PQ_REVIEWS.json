@@ -1,0 +1,58 @@
+{
+	"name": "DS_SINK_PQ_REVIEWS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_OUT",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
+				"fileSystem": "orderreviews"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "reviewid",
+				"type": "UTF8"
+			},
+			{
+				"name": "orderid",
+				"type": "UTF8"
+			},
+			{
+				"name": "reviewscore",
+				"type": "UTF8"
+			},
+			{
+				"name": "reviewcommenttitle",
+				"type": "UTF8"
+			},
+			{
+				"name": "reviewcommentmessage",
+				"type": "UTF8"
+			},
+			{
+				"name": "reviewcreationdate",
+				"type": "UTF8"
+			},
+			{
+				"name": "reviewanswertimestamp",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

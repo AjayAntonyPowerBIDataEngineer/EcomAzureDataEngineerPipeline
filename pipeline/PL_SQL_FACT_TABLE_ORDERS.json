@@ -1,0 +1,94 @@
+{
+	"name": "PL_SQL_FACT_TABLE_ORDERS",
+	"properties": {
+		"activities": [
+			{
+				"name": "CPY_DIM_SQL_COPY_Orders",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ON_PREM_SQL_SERVER",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": {
+								"value": "@pipeline().parameters.schemaname",
+								"type": "Expression"
+							},
+							"table": {
+								"value": "@pipeline().parameters.tablename",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SINK_DIM_SQL_PQ",
+						"type": "DatasetReference",
+						"parameters": {
+							"filesysystem": {
+								"value": "orders",
+								"type": "Expression"
+							},
+							"folder": {
+								"value": "@concat( 'Orders/', formatDateTime(utcNow(),'yyyy'), '/', formatDateTime(utcNow(),'MM'), '/', formatDateTime(utcNow(),'dd') )",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			},
+			"schemaname": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "PL_FACT_TABLE"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-05-14T17:08:49Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

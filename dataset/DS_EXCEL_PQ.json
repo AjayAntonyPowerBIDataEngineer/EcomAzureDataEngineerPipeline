@@ -1,0 +1,43 @@
+{
+	"name": "DS_EXCEL_PQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Sheetname": {
+				"type": "String"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"ExcelFile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().Sheetname",
+				"type": "Expression"
+			},
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().ExcelFile",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Directory",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

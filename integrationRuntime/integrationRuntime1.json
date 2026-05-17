@@ -1,0 +1,12 @@
+{
+	"name": "integrationRuntime1",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/50334e89-fbc2-4564-85e2-2daf7cd8f69b/resourcegroups/adfmigrationvisionboard/providers/Microsoft.DataFactory/factories/adfmigration11/integrationruntimes/IRONPREM",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "LS_SRC_SFTP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsdevisionboardraw01t.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDhCQTg3NzdBLTM5OUQtNDlEOC1BNEQ3LTI3QkZCNDQwQzc5NF80YjIyMDc0Yi1lMGYyLTQwNDEtODQ2Mi1mY2QyYmU0YTU3OWUiDQp9"
+		}
+	}
+}

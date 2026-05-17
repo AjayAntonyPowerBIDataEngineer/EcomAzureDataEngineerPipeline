@@ -1,0 +1,17 @@
+{
+	"name": "DS_SRC_SNOWFLAKE_ORDERITEMS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Snowflake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "AZURE_INTEGRATION",
+			"table": "ORDER_ITEMS_DATASET"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

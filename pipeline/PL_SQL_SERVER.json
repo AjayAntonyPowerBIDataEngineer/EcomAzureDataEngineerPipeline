@@ -1,0 +1,178 @@
+{
+	"name": "PL_SQL_SERVER",
+	"properties": {
+		"activities": [
+			{
+				"name": "JSON_VALUE",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "JSON_MAPPING",
+					"value": {
+						"value": "@json('[\n    {\n        \"tablename\": \"olist_orders_dataset\",\n        \"schemaname\": \"dbo\",\n        \"FileSystem\": \"orders\"\n    },\n    {\n        \"tablename\": \"olist_products_dataset\",\n        \"schemaname\": \"dbo\",\n        \"FileSystem\": \"products\"\n    },\n    {\n        \"tablename\": \"olist_sellers_dataset\",\n        \"schemaname\": \"dbo\",\n        \"FileSystem\": \"sellers\"\n    }\n]')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEachSQL",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "JSON_VALUE",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('JSON_MAPPING')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "SWITCH_SQL_TABLE_CSV",
+							"type": "Switch",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"on": {
+									"value": "@item().tablename",
+									"type": "Expression"
+								},
+								"cases": [
+									{
+										"value": "olist_orders_dataset",
+										"activities": [
+											{
+												"name": "EXEC_FACT_ORDERS",
+												"type": "ExecutePipeline",
+												"dependsOn": [],
+												"policy": {
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"pipeline": {
+														"referenceName": "PL_SQL_FACT_TABLE_ORDERS",
+														"type": "PipelineReference"
+													},
+													"waitOnCompletion": true,
+													"parameters": {
+														"tablename": {
+															"value": "@item().tablename",
+															"type": "Expression"
+														},
+														"schemaname": {
+															"value": "dbo",
+															"type": "Expression"
+														},
+														"filename": {
+															"value": "@item().FileSystem",
+															"type": "Expression"
+														}
+													}
+												}
+											}
+										]
+									},
+									{
+										"value": "olist_products_dataset",
+										"activities": [
+											{
+												"name": "EXEC_DIM_PRODUCTS",
+												"type": "ExecutePipeline",
+												"dependsOn": [],
+												"policy": {
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"pipeline": {
+														"referenceName": "PL_SQL_DIM_TABLE_PRODUCTS",
+														"type": "PipelineReference"
+													},
+													"waitOnCompletion": true,
+													"parameters": {
+														"filename": {
+															"value": "@item().FileSystem",
+															"type": "Expression"
+														},
+														"tablename": {
+															"value": "@item().tablename",
+															"type": "Expression"
+														},
+														"schemaname": {
+															"value": "@item().schemaname",
+															"type": "Expression"
+														}
+													}
+												}
+											}
+										]
+									},
+									{
+										"value": "olist_sellers_dataset",
+										"activities": [
+											{
+												"name": "EXEC_DIM_SELLERS",
+												"type": "ExecutePipeline",
+												"dependsOn": [],
+												"policy": {
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"pipeline": {
+														"referenceName": "PL_SQL_DIM_TABLE_SELLERS",
+														"type": "PipelineReference"
+													},
+													"waitOnCompletion": true,
+													"parameters": {
+														"filename": {
+															"value": "@item().FileSystem",
+															"type": "Expression"
+														},
+														"tablename": {
+															"value": "@item().tablename",
+															"type": "Expression"
+														},
+														"schemaname": {
+															"value": "@item().schemaname",
+															"type": "Expression"
+														}
+													}
+												}
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"JSON_MAPPING": {
+				"type": "Array"
+			},
+			"Outvariable": {
+				"type": "String"
+			},
+			"Out2": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-05-08T17:56:30Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
