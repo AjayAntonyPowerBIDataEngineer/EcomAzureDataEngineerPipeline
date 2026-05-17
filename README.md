@@ -247,13 +247,9 @@ KPI	Description
 
 Interactive dashboards built using Power BI provide:
 
-Executive sales overview
-Customer analytics
-Seller performance
-Product category analysis
-Delivery & logistics insights
-Geographic sales distribution
-Revenue trend analysis
+![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/084fa4dc491914d973c3846fd035422b8a497b9d/4_3.png)
+
+
 
 # Project Structure
 ```plaintext
