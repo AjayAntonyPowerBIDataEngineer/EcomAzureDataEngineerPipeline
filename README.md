@@ -136,6 +136,10 @@ Business-ready dimensional tables created for analytics and reporting.
 
 # Fact and Dimensional Data Processing
 
+![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/7abe0e953321438efa023abe25bbc5dd1edb8a98/Screenshot%20(194).png)
+
+
+
 # Data Pipeline
 
 
