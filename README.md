@@ -142,7 +142,7 @@ Business-ready dimensional tables created for analytics and reporting.
 
 # Data Pipeline
 
-
+![image_alt](https://github.com/AjayAntonyPowerBIDataEngineer/EcomAzureDataEngineerPipeline/blob/43fd258c914d2423a0a646e0fc8f243cb0787ff6/Data%20Pipeline%20For%20loading%20tables.png)
 
 
 
