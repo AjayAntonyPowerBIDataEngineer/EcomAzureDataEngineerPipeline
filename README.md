@@ -257,41 +257,117 @@ Revenue trend analysis
 
 # Project Structure
 ```plaintext
-brazilian-ecommerce-azure-data-engineering/
+ecom-azure-data-engineering-pipeline/
 │
 ├── README.md
+│
 ├── architecture/
-│   └── solution_architecture.png
+│   ├── Data Pipeline For loading tables.png
+│   ├── Factanddimprocessing.png
+│   └── Pipeline.png
 │
 ├── datasets/
-│   └── raw_source_files/
-│
-├── adf-pipelines/
-│   ├── master_pipeline/
-│   ├── ingestion_pipelines/
-│   └── incremental_loads/
+│   ├── source_datasets/
+│   │   ├── DS_SRC_CSV_PAYMENTS.json
+│   │   ├── DS_SRC_FACT_ORDER_ITEMS.json
+│   │   ├── DS_SRC_ONPREM_SQL_SERVER.json
+│   │   ├── DS_SRC_SFTP.json
+│   │   ├── DS_SRC_SNOWFLAKE_ORDERITEMS.json
+│   │   └── DS_SQLSERVER_PQ.json
+│   │
+│   ├── sink_datasets/
+│   │   ├── DS_OUT_EXCEL_PARQUET.json
+│   │   ├── DS_SINK_DIM_SQL_PQ.json
+│   │   ├── DS_SINK_FACT_SQL_PQ.json
+│   │   └── DS_SQL_FACT.json
+│   │
+│   └── file_datasets/
+│       ├── DS_AZURE_SQL_PARQUET.json
+│       ├── DS_CSV_PARQUET.json
+│       ├── DS_EXCEL_PQ.json
+│       ├── DS_OUT_out001tgt.json
+│       ├── DS_SFTP_OUT_CSV.json
+│       └── DS_SRC_raw01t.json
 │
 ├── databricks/
-│   ├── bronze_layer/
-│   ├── silver_layer/
-│   ├── gold_layer/
-│   └── pyspark_transformations/
+│   ├── bronze_to_silver/
+│   │   ├── Customers Bronze -> Silver.ipynb
+│   │   ├── Geolocation Bronze -> Silver.ipynb
+│   │   ├── Seller Bronze -> Silver.ipynb
+│   │   ├── OrderItems Bronze to Silver Full Load.ipynb
+│   │   ├── OrderReviews Bronze to Silver Full Load.ipynb
+│   │   ├── Orders Bronze to Silver Full Load.ipynb
+│   │   └── Payments Bronze to Silver Full Load.ipynb
+│   │
+│   ├── silver_to_gold/
+│   │   ├── Customers Silver -> Gold.ipynb
+│   │   ├── Geolocation Silver -> Gold.ipynb
+│   │   ├── Products Silver -> Gold.ipynb
+│   │   ├── Seller Silver -> Gold.ipynb
+│   │   ├── OrderItemsFact Silver to Gold.ipynb
+│   │   ├── Payments Silver to Gold.ipynb
+│   │   └── Reviews Silver to Gold.ipynb
+│   │
+│   ├── dimension_processing/
+│   │   └── SCD 1 Products Bronze -> Silver.ipynb
+│   │
+│   └── setup/
+│       └── setup.ipynb
 │
-├── sql/
-│   ├── schema_creation/
-│   ├── fact_tables/
-│   └── dimension_tables/
+├── orchestration/
+│   ├── master_pipeline/
+│   │   └── PL1_MASTER.json
+│   │
+│   ├── raw_ingestion_pipelines/
+│   │   ├── PL2_RAW_DATA.json
+│   │   ├── PL3_CLOUDSG_CSV_EXCEL.json
+│   │   ├── PL_SWITCH_CSV_EXCEL.json
+│   │   └── PL_SQL_SERVER.json
+│   │
+│   ├── dimension_pipelines/
+│   │   ├── PL_DIM_TABLE_GEOLOCATION.json
+│   │   ├── PL_REST_API_DIM_PRODUCTCATEGORY.json
+│   │   ├── PL_SFTP_CUSTOMERS_DIM.json
+│   │   ├── PL_SQL_DIM_TABLE_PRODUCTS.json
+│   │   └── PL_SQL_DIM_TABLE_SELLERS.json
+│   │
+│   └── fact_pipelines/
+│       ├── PL_CSV_Payments.json
+│       ├── PL_EXCEL_FACT_REVIEWS.json
+│       ├── PL_SNOWFLAKE_ORDERITEMS.json
+│       └── PL_SQL_FACT_TABLE_ORDERS.json
 │
-├── powerbi/
-│   └── ecommerce_dashboard.pbix
+├── linked_services/
+│   ├── AzureBlobStorage1.json
+│   ├── AzureSqlDatabase1.json
+│   ├── LS_CSV_PARQUET.json
+│   ├── LS_EXCEL_PARQUET.json
+│   ├── LS_OUT.json
+│   ├── LS_REST_API.json
+│   ├── LS_SQLSERVER_ONPREM.json
+│   ├── LS_SRC_SFTP.json
+│   └── Snowflake1.json
 │
-├── notebooks/
-│   ├── data_cleaning.ipynb
-│   ├── exploratory_analysis.ipynb
-│   └── business_metrics.ipynb
+├── integration_runtime/
+│   └── integrationRuntime1.json
 │
-└── docs/
-    └── project_documentation.pdf
+├── factory/
+│   └── ADF-VB8B-ETL-DEV.json
+│
+├── workflows/
+│   ├── raw_to_bronze_workflow/
+│   ├── bronze_to_silver_workflow/
+│   ├── silver_to_gold_workflow/
+│   └── scd_processing_workflow/
+│
+├── docs/
+│   ├── implementation_notes/
+│   ├── pipeline_execution_flow/
+│   ├── medallion_architecture/
+│   └── scd_processing_logic/
+│
+└── publish_config/
+    └── publish_config.json
 ```
 
 Connect Power BI to Gold layer
