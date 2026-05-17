@@ -134,6 +134,14 @@ Architecture inspired by your ETL project presentation
 
 Business-ready dimensional tables created for analytics and reporting.
 
+# Fact and Dimensional Data Processing
+
+# Data Pipeline
+
+
+
+
+
 # ETL & Data Cleaning Strategy
 
 ### Implemented industry-standard PySpark transformations:
